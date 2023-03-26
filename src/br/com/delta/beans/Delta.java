@@ -31,9 +31,13 @@ public class Delta {
 		this.c = c;
 	}
 
-	public void retornarDelta(float resultadoDelta, boolean deltaNegativo) {
-		JOptionPane.showMessageDialog(null, "Delta = " + resultadoDelta
-				+ "\nDelta negativo? " + deltaNegativo);
+	public void RetornarDelta(float resultadoDelta, boolean deltaNegativo) {
+		JOptionPane.showMessageDialog(null,
+				"Resultado do cálculo: %.2f \nDelta negativo? %b".formatted(resultadoDelta, deltaNegativo)); // Java 15+
+		JOptionPane.showMessageDialog(null, 
+				String.format("Resultado do cálculo: %.2f \nDelta negativo? %b", resultadoDelta, deltaNegativo)); // Java 15-
+		// Interpolação de strings:
+		// https://pt.stackoverflow.com/questions/512957/h%C3%A1-como-interpolar-strings-em-java
 	}
 
 }
